@@ -19,13 +19,14 @@ export function useProducts() {
                 }
 
                 // Otherwise fetch from API
-                const response = await fetch("https://api.escuelajs.co/api/v1/categories/2/products");
+                const response = await fetch("https://dummyjson.com/products?limit=0");
+
                 if (!response.ok) throw new Error("Failed to fetch products");
                 const data = await response.json();
 
                 // Save to state + cache
-                setProducts(data);
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+                setProducts(data.products);
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(data.products));
             
             } catch (error) {
                 console.error("Error:", error);
