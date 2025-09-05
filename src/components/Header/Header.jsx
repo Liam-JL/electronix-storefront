@@ -1,5 +1,4 @@
 import { IoSearch as SearchIcon, IoCartOutline as CartIcon } from "react-icons/io5";
-import Navbar from "./Navbar";
 
 export default function Header() {
     return (
@@ -30,5 +29,19 @@ export function HeaderTop() {
                 <CartIcon />
             </button>
         </div>
+    )
+}
+
+export function Navbar() {
+    return (
+        <nav>
+            <ul>
+                <li><a href="#">All Products</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Tablets</a></li>
+                <li><a href="#">Smartphones</a></li>
+                <li><a href="#">Accessories</a></li>
+            </ul>
+        </nav>
     )
 }
