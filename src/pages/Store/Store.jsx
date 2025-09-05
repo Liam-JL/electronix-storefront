@@ -1,4 +1,4 @@
-import { useProducts } from "../shared/hooks/useProducts";
+import { useProducts } from "../hooks/useProducts";
 
 export default function Store() {
     const { products, loading, error } = useProducts();
