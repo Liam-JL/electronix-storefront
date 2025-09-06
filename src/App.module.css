@@ -1,0 +1,11 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.pageContainer {
+    flex-grow: 1;
+    align-content: center;
+    justify-content: center;
+}
