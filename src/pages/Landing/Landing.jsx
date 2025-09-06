@@ -1,9 +1,9 @@
 import Hero from '../../components/Hero/Hero';
+import styles from './Landing.module.css'
 
 function Landing() {
     return (
-        <div>
-            <h1>Landing</h1>
+        <div className={styles.landing}>
             <Hero />
         </div>
     );
