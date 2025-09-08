@@ -1,6 +1,7 @@
 import Background from './components/Background/Background';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import PageContainer from './components/PageContainer/PageContainer';
 import Landing from './pages/Landing/Landing';
 import styles from './App.module.css'
 
@@ -10,9 +11,9 @@ function App() {
     <div className={styles.app}>
       <Background />
       <Header />
-      <div className={styles.pageContainer}>
+      <PageContainer>
         <Landing />
-      </div>
+      </PageContainer>
       <Footer />
     </div>
   )
