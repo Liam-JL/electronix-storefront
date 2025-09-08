@@ -1,10 +1,14 @@
 import styles from './Button.module.css'
 
-function Button({onClick, icon = null, textContent = null, accented = false}) {
+function Button({onClick, icon = null, textContent = null, accented = false, ariaLabel = null}) {
     return (
-        <button onClick={onClick} className={accented ? styles.accentedButton : styles.button}>
-            {icon ? icon : ""}
-            {textContent ? textContent : ""}
+        <button 
+            onClick={onClick} 
+            className={accented ? styles.accentedButton : styles.button}
+            ariaLabel={ariaLabel}
+        >
+            {icon}
+            {textContent}
         </button>
     )
 }
