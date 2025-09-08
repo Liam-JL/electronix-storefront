@@ -1,0 +1,8 @@
+.logo {
+    composes: flexContainer from "../../global-styles/flex.css";
+    gap: 0.5rem;
+
+    & h1 {
+        font-family: "Audiowide", sans-serif;
+    }
+}
