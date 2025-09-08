@@ -1,0 +1,15 @@
+.pageContainer {
+    composes: flexContainer from "../../global-styles/flex.css";
+    flex-grow: 1;
+    position: relative;
+}
+
+.pageBackground {
+    position: absolute;
+    background-image: url('../../../public/circuit-board.svg');
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    mask-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+    -webkit-mask-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 1) 100%);
+}
