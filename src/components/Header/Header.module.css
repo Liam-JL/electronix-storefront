@@ -1,8 +1,80 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    & > button {
+        display: none;
+    }
+}
+
 .logo {
     composes: flexContainer from "../../global-styles/flex.css";
     gap: 0.5rem;
 
+    & img {
+        height: 40px;
+        width: auto;
+    }
+
     & h1 {
         font-family: "Audiowide", sans-serif;
+        font-size: 1.75rem;
+        letter-spacing: 1px;
+        color: var(--color-black);
     }
+}
+
+.searchBar {
+    composes: flexContainer from "../../global-styles/flex.css";
+    gap: 0.5rem;
+    max-width: 400px;
+    width: 100%;
+}
+
+.input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid var(--color-black);
+    border-radius: 24px;
+    font-size: 1rem;
+}
+
+.inputBtn {
+    composes: flexContainer from "../../global-styles/flex.css";
+    border-radius: 16px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    
+    
+
+    & svg {
+        height: 28px;
+        width: 28px;
+        color: var(--color-black);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    & svg:hover {
+        opacity: 0.7;
+        transform: scale(1.2);
+    }
+}
+
+.nav {
+    composes: flexContainer from "../../global-styles/flex.css";
+}
+
+/* ----------------------------- */
+/* Responsive adjustments */
+/* ----------------------------- */
+@media (max-width: 768px) {
+    .header {
+        & > button {
+            display: block;
+        }
+    }
+
 }
