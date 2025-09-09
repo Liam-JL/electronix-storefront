@@ -1,0 +1,41 @@
+.logo {
+    composes: flexContainer from "../../global-styles/flex.css";
+    gap: 0.5rem;
+    color: var(--color-black);
+    font-family: "Audiowide", sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+
+    & img {
+        height: 40px;
+        width: auto;
+    }
+}
+
+.smallLogo {
+    composes: logo;
+    font-size: 0.8rem;
+    letter-spacing: none;
+
+    & img {
+        height: 30px;
+        width: auto;
+    }
+}
+
+.dark {
+    color: var(--color-white);
+}
+
+/* ----------------------------- */
+/* Responsive adjustments */
+/* ----------------------------- */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 0.8rem;
+    }
+
+    .smallLogo {
+        font-size: 0.6rem;
+    }
+}
