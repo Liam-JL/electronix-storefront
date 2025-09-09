@@ -2,7 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 2.5rem;
+    background-color: var(--color-white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
 
     & > button {
         display: none;
@@ -35,7 +41,7 @@
 
 .input {
     flex: 1;
-    padding: 0.5rem 0.75rem;
+    padding: 0.3rem 0.75rem;
     border: 2px solid var(--color-black);
     border-radius: 24px;
     font-size: 1rem;
@@ -63,9 +69,33 @@
     }
 }
 
-.nav {
-    composes: flexContainer from "../../global-styles/flex.css";
+.nav{
+    display: flex;
 }
+
+.navUl {
+    composes: flexContainer from "../../global-styles/flex.css";
+    gap: 2rem;
+}
+
+.navLink {
+    composes: flexContainer from "../../global-styles/flex.css";
+    flex-direction: column;
+    color: var(--color-black);
+
+    &:hover .navIcon {
+        transform: scale(1.2);
+    }
+
+    &:hover .tiltIcon {
+        transform: scale(1.2) rotate(-0.05turn);
+    }
+}
+
+.navIcon {
+    transition: all 0.2s ease-in-out;
+}
+
 
 /* ----------------------------- */
 /* Responsive adjustments */
@@ -77,4 +107,11 @@
         }
     }
 
+    .searchBar, .searchBar * {
+        display: none;
+    }
+
+    .nav {
+        display: none;
+    }
 }
