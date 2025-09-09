@@ -1,4 +1,4 @@
-import { IoSearch as SearchIcon, IoCartOutline as CartIcon, IoMenu as MenuIcon } from "react-icons/io5";
+import { IoSearch as SearchIcon, IoCartOutline as CartIcon, IoMenu as MenuIcon, IoStorefrontOutline as ShopIcon } from "react-icons/io5";
 import Button from '../Button/Button';
 import styles from './Header.module.css'
 
@@ -39,6 +39,7 @@ export function SearchBar() {
                 type="text" 
                 name="search"
                 placeholder="Search products..."
+                autoComplete="off"
                 className={styles.input}
             />
             <button type="submit" className={styles.inputBtn} >
@@ -50,13 +51,24 @@ export function SearchBar() {
 
 export function Nav() {
     return(
-        <nav className={styles.nav}>
-            
+        <nav className={styles.nav} aria-label="Main navigation">
+            <ul className={styles.navUl}>
+                <li>
+                    <a href="#" aria-label="Go to Shop" className={styles.navLink}>
+                        <ShopIcon className={styles.navIcon} />
+                        <span>SHOP</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" aria-label="Go to Cart" className={styles.navLink}> 
+                        <CartIcon className={`${styles.navIcon} ${styles.tiltIcon}`} />
+                        <span aria-live="polite">0</span>
+                    </a>    
+                </li>
+            </ul>
         </nav>
     )
 }
-
-
 
 
 export default Header;

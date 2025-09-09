@@ -5,7 +5,7 @@ function Button({onClick, icon = null, textContent = null, accented = false, ari
         <button 
             onClick={onClick} 
             className={accented ? styles.accentedButton : styles.button}
-            ariaLabel={ariaLabel}
+            aria-label={ariaLabel}
         >
             {icon}
             {textContent}
