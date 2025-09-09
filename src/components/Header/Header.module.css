@@ -15,23 +15,6 @@
     }
 }
 
-.logo {
-    composes: flexContainer from "../../global-styles/flex.css";
-    gap: 0.5rem;
-
-    & img {
-        height: 40px;
-        width: auto;
-    }
-
-    & h1 {
-        font-family: "Audiowide", sans-serif;
-        font-size: 1.75rem;
-        letter-spacing: 1px;
-        color: var(--color-black);
-    }
-}
-
 .searchBar {
     composes: flexContainer from "../../global-styles/flex.css";
     gap: 0.5rem;
@@ -102,16 +85,18 @@
 /* ----------------------------- */
 @media (max-width: 768px) {
     .header {
+        padding: 1rem;
+
         & > button {
             display: block;
         }
     }
 
-    .searchBar, .searchBar * {
+    .header .searchBar {
         display: none;
     }
 
-    .nav {
+    .header .nav {
         display: none;
     }
 }

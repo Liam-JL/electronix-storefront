@@ -2,6 +2,7 @@
     composes: flexContainer from "../../global-styles/flex.css";
     flex-grow: 1;
     position: relative;
+    min-height: 75vh;
 }
 
 .pageBackground {

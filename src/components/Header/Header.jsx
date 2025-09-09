@@ -1,5 +1,6 @@
 import { IoSearch as SearchIcon, IoCartOutline as CartIcon, IoMenu as MenuIcon, IoStorefrontOutline as ShopIcon } from "react-icons/io5";
 import Button from '../Button/Button';
+import Logo from "../Logo/Logo";
 import styles from './Header.module.css'
 
 function Header() {
@@ -16,15 +17,6 @@ function Header() {
             <Button onClick={openNavAside} icon={<MenuIcon />} ariaLabel={"Open Nav Sidebar"}/> 
         </header>
     );
-}
-
-function Logo() {
-    return (
-        <a href="#" className={styles.logo}>
-            <img src="../../../public/logoipsum-light.svg" alt="" />
-            <h1>Electronix</h1>
-        </a>
-    )
 }
 
 export function SearchBar() {
