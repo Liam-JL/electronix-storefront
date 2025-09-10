@@ -8,6 +8,7 @@
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    
 
 
     & > button {
@@ -17,9 +18,13 @@
 
 .searchBar {
     composes: flexContainer from "../../global-styles/flex.css";
+    flex: 0 1 400px;
     gap: 0.5rem;
     max-width: 400px;
     width: 100%;
+    position: absolute;
+    left: calc(50% + 2.5rem);
+    transform: translate(-50%);
 }
 
 .input {
@@ -83,7 +88,7 @@
 /* ----------------------------- */
 /* Responsive adjustments */
 /* ----------------------------- */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .header {
         padding: 1rem;
 
