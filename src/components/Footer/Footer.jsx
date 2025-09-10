@@ -33,15 +33,19 @@ function Footer() {
                 <ul>
                     <li>
                         <MailIcon />
+                        <a href="mailto:someone@example.com">help@electronix.com</a>
                     </li>
                     <li>
                         <CallIcon />
+                        <a href="tel:1234567">Call 123-4567</a>
                     </li>
                     <li>
                         <ChatIcon />
+                        <a href='#'>Chat With Us</a>
                     </li>
                     <li>
                         <GithubIcon />
+                        <a href='https://github.com/Liam-JL'>Liam Lirson on GitHub</a>
                     </li>
                 </ul>
             </div>

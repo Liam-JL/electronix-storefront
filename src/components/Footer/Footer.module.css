@@ -16,6 +16,10 @@
     flex-grow: 1;
     max-width: 700px;
     gap: 1rem;
+
+    & p > a {
+        text-decoration: underline;
+    }
 }
 
 .usefulLinks, .contactLinks{
@@ -50,11 +54,6 @@
     & svg {
         height: 20px;
         width: auto;
-    }
-
-    &:hover {
-        color: var(--color-accent);
-        
     }
 }
 
