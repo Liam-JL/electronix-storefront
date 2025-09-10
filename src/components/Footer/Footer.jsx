@@ -5,12 +5,12 @@ import { IoChatbubblesSharp as ChatIcon, IoCall as CallIcon, IoMail as MailIcon,
 function Footer() {
     return (
         <footer className={styles.footer}>
-            <div className={styles.about} aria-label='About Section'>
+            <section className={styles.about} aria-labelledby='footer-about'>
                 <Logo dark={true} small={true} />
-                <p>This is not a real store. This is the front-end of a hypothetical E-commerce app built in React for demonstration purposes only. Find the repository on <a href='https://github.com/Liam-JL/electronix-storefront'>GitHub</a></p>
-            </div>
+                <p id='footer-about'>This is not a real store. This is the front-end of a hypothetical E-commerce app built in React for demonstration purposes only. Find the repository on <a href='https://github.com/Liam-JL/electronix-storefront'>GitHub</a></p>
+            </section>
 
-            <div className={styles.usefulLinks}>
+            <section className={styles.usefulLinks}>
                 <h2>Useful Links</h2>
                 <ul>
                     <li>
@@ -26,9 +26,9 @@ function Footer() {
                         <a href='https://dummyjson.com/'>DummyJSON</a>
                     </li>
                 </ul>
-            </div>
+            </section>
             
-            <div className={styles.contactLinks}>
+            <section className={styles.contactLinks}>
                 <h2>Contact Us</h2>
                 <ul>
                     <li>
@@ -48,7 +48,7 @@ function Footer() {
                         <a href='https://github.com/Liam-JL'>Liam Lirson on GitHub</a>
                     </li>
                 </ul>
-            </div>
+            </section>
         </footer>
     );
 }

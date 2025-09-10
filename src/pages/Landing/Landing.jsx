@@ -3,9 +3,9 @@ import styles from './Landing.module.css'
 
 function Landing() {
     return (
-        <div className={styles.landing}>
+        <main className={styles.landing}>
             <Hero />
-        </div>
+        </main>
     );
 }
 export default Landing;

@@ -1,8 +1,8 @@
 .pageContainer {
     composes: flexContainer from "../../global-styles/flex.css";
-    flex-grow: 1;
+    flex: 1;
     position: relative;
-    min-height: 75vh;
+    background: linear-gradient(135deg, #ffffffe5, #e8e9eebb);
 }
 
 .pageBackground {
