@@ -21,9 +21,12 @@ function ProductCard({product}) {
 
             <footer className={styles.actions}>
                 <div className={styles.quantityWrapper}>
-                    Quantity stuff
+                    <label className="sr-only" for={`quantity-${product.id}`}>{`Quantity for: ${product.title}`}</label>
+                    <button className={styles.quantityButton} aria-label='Decrease quantity'>-</button>
+                    <input className={styles.quantityInput} type="number" min={1} value={1} id={`quantity-${product.id}`}/>
+                    <button className={styles.quantityButton} aria-label='Increase quantity'>+</button>
                 </div>
-                <Button onClick={handleAddToCart} icon={<CartIcon />}  textContent={"Add"} accented={true} />
+                <button className={styles.addButton} onClick={handleAddToCart}><CartIcon /> Add</button>
             </footer>
         </article>
     )
