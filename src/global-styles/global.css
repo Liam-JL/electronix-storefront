@@ -54,7 +54,7 @@ svg {
 :root {
   /* Base colors */
   --color-white: #ffffff;
-  --color-light-grey: #f2f2f2;
+  --color-light-grey: #f8f6fc;
   --color-black: #000000;
 
   /* Accent (neon orange) */
@@ -65,5 +65,16 @@ svg {
   --color-accent-dark: #cc5200;  /* deeper orange */
   --color-accent-shadow: rgba(255, 140, 0, 0.5);
   --color-grey: #a5a5ad;         /* mid-grey for borders/secondary text */
+}
+
+.sr-only {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px, 1px, 1px, 1px); /*deprecated - legacy browsers */
+  clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
+  white-space: nowrap;
 }
 
