@@ -9,7 +9,6 @@ function Store() {
 
     function handleFilterButton(e) {
         setActiveCategory(e.target.getAttribute("data-category"))
-        console.log(activeCategory)
     }
 
     return (
@@ -35,7 +34,7 @@ function FilterBar( {activeCategory, handleFilterButton} ) {
             <button data-category="smartphones" className={`${styles.filterButton} ${activeCategory === "smartphones" ? styles.active : ""}`} onClick={handleFilterButton} >Smartphones</button>
             <button data-category="laptops" className={`${styles.filterButton} ${activeCategory === "laptops" ? styles.active : ""}`} onClick={handleFilterButton}>Laptops</button>
             <button data-category="tablets" className={`${styles.filterButton} ${activeCategory === "tablets" ? styles.active : ""}`} onClick={handleFilterButton}>Tablets</button>
-            <button data-category="mobile-accessories" className={`${styles.filterButton} ${activeCategory === "accessories" ? styles.active : ""}`} onClick={handleFilterButton}>Accessories</button>
+            <button data-category="mobile-accessories" className={`${styles.filterButton} ${activeCategory === "mobile-accessories" ? styles.active : ""}`} onClick={handleFilterButton}>Accessories</button>
         </div>
     )
 }
