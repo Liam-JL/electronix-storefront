@@ -38,6 +38,7 @@
     text-decoration: none;
     color: var(--color-light-grey);
     transition: color 0.2s ease;
+    
 
     &:hover {
         color: var(--color-accent);
@@ -47,6 +48,7 @@
 .footer li {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 1rem;
     transition: color 0.2s ease;
     min-width: 200px;
@@ -66,4 +68,10 @@
         align-items: center;
         text-align: center;
     }
+
+    .footer li {
+        justify-content: center;
+    }
+
+
 }
