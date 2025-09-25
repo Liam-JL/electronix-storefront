@@ -1,11 +1,21 @@
 .store {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     padding: 2rem;
     width: 100%;
 }
 
+.header {
+    text-align: center;
+
+    & h1 {
+        font-size: 3rem;
+    }
+}
+
 .productGridContainer {
-
-
+    padding: 2rem;
 }
 
 .productGrid {
@@ -15,10 +25,47 @@
         auto-fit,
         minmax(200px, 1fr)
     );
+    align-items: stretch;
 }
 
 @media (min-width: 1000px ) {
     .productGrid {
         grid-template-columns: repeat(4, 1fr);
     }
+}
+
+.filterBar {
+    background-color: var(--color-white);
+    border: solid 1px var(--color-grey);
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+}
+
+.filterButton {
+    composes: button from '../../components/Button/Button.module.css';
+    background-color: var(--color-light-grey);
+    flex: 1;
+    border-radius: 8px;
+
+    &:hover {
+        background-color: var(--color-accent);
+        border-color: var(--color-accent-dark);
+        color: var(--color-white);
+        box-shadow: 0 0 4px var(--color-accent), 0 0 8px var(--color-accent);
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.6s ease-in-out;
+        box-shadow: 0 0 8px var(--color-accent), 0 0 16px var(--color-accent-light);
+    }
+}
+
+.filterButton.active {
+        background-color: var(--color-accent);
+        border-color: var(--color-accent-dark);
+        color: var(--color-white);
+        box-shadow: 0 0 4px var(--color-accent), 0 0 8px var(--color-accent);
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.6s ease-in-out;
+        box-shadow: 0 0 8px var(--color-accent), 0 0 16px var(--color-accent-light);
 }
