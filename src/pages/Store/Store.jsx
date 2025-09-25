@@ -1,42 +1,68 @@
 import { useProductsContext } from "../../context/ProductsContext";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import styles from './Store.module.css'
+import { useState } from "react";
+import { SiStyleshare } from "react-icons/si";
 
 function Store() {
+    const [activeCategory, setActiveCategory] = useState("all");
+
+    function handleFilterButton(e) {
+        setActiveCategory(e.target.getAttribute("data-category"))
+        console.log(activeCategory)
+    }
+
     return (
         <main className={styles.store} aria-label="Main Store Page">
-            <header>
+            <header className={styles.header}>
                 <h1>Our Collection</h1>
                 <p>Explore the latest electronics, hand-picked to power your everyday life with style and performance.</p>
             </header>
             <section>
-                <FilterBar />
-                <ProductGrid />
+                <FilterBar activeCategory={activeCategory} handleFilterButton={handleFilterButton}/>
+                <ProductGrid activeCategory={activeCategory}/>
             </section>
         </main>
     );
 }
 
-function FilterBar() {
+function FilterBar( {activeCategory, handleFilterButton} ) {
+
+
     return (
-        <div></div>
+        <div className={styles.filterBar}>
+            <button data-category="all" className={`${styles.filterButton} ${activeCategory === "all" ? styles.active : ""}`} onClick={handleFilterButton}>All</button>
+            <button data-category="smartphones" className={`${styles.filterButton} ${activeCategory === "smartphones" ? styles.active : ""}`} onClick={handleFilterButton} >Smartphones</button>
+            <button data-category="laptops" className={`${styles.filterButton} ${activeCategory === "laptops" ? styles.active : ""}`} onClick={handleFilterButton}>Laptops</button>
+            <button data-category="tablets" className={`${styles.filterButton} ${activeCategory === "tablets" ? styles.active : ""}`} onClick={handleFilterButton}>Tablets</button>
+            <button data-category="mobile-accessories" className={`${styles.filterButton} ${activeCategory === "accessories" ? styles.active : ""}`} onClick={handleFilterButton}>Accessories</button>
+        </div>
     )
 }
 
-function ProductGrid() {
+function ProductGrid( {activeCategory}) {
     const { products, loading, error } = useProductsContext();
 
     if (loading) return <p>Loading Products...</p>
     if (error) return <p>{error}</p>
 
-    function filtered(products, category) {
-        return products.filter((product) => product.category === category);
+    function filtered(products) {
+        if(activeCategory === "all") {
+            return products.filter((product) => 
+                product.category === "smartphones" |
+                product.category === "laptops" |
+                product.category === "tablets" |
+                product.category === "mobile-accessories"
+            )
+        }
+
+        return products.filter((product) => product.category === activeCategory);
     }
 
     return (
         <div className={styles.productGridContainer}>
             <ul className={styles.productGrid}>
-                {filtered(products, "smartphones").map((product) => (
+                {filtered(products).map((product) => (
                     <li key={product.id}>
                         <ProductCard key={product.id} product={product} />
                     </li>
