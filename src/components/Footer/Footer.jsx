@@ -20,7 +20,7 @@ function Footer() {
                         <a href='#'>Shipping Information</a>
                     </li>
                     <li>
-                        <a href='#'>FAQ</a>
+                        <a href='https://logoipsum.com/'>Logoipsum</a>
                     </li>
                     <li>
                         <a href='https://dummyjson.com/'>DummyJSON</a>
