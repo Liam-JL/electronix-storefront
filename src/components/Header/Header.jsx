@@ -2,6 +2,7 @@ import { IoSearch as SearchIcon, IoCartOutline as CartIcon, IoMenu as MenuIcon, 
 import Button from '../Button/Button';
 import Logo from "../Logo/Logo";
 import styles from './Header.module.css'
+import { Link } from "react-router";
 
 function Header() {
 
@@ -11,7 +12,7 @@ function Header() {
 
     return (
         <header className={styles.header}>
-            <Logo />
+            <Link to="/"><Logo /></Link>
             <SearchBar /> 
             <Nav />
             <Button onClick={openNavAside} icon={<MenuIcon />} ariaLabel={"Open Nav Sidebar"}/> 
@@ -46,16 +47,16 @@ export function Nav() {
         <nav className={styles.nav} aria-label="Main navigation">
             <ul className={styles.navUl}>
                 <li>
-                    <a href="#" aria-label="Go to Shop" className={styles.navLink}>
+                    <Link to="/store" aria-label="Go to Shop" className={styles.navLink}>
                         <ShopIcon className={styles.navIcon} />
                         <span>SHOP</span>
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="#" aria-label="Go to Cart" className={styles.navLink}> 
+                    <Link to="/cart" aria-label="Go to Cart" className={styles.navLink}> 
                         <CartIcon className={`${styles.navIcon} ${styles.tiltIcon}`} />
                         <span aria-live="polite">0</span>
-                    </a>    
+                    </Link>    
                 </li>
             </ul>
         </nav>
