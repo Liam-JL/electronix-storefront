@@ -1,3 +1,4 @@
+import { BrowserRouter } from 'react-router';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import PageContainer from './components/PageContainer/PageContainer';
@@ -11,12 +12,11 @@ function App() {
   return (
     <div className={styles.app}>
       <ProductsProvider>
-        <Header />
-        <PageContainer>
-          {/* <Landing /> */}
-          <Store />
-        </PageContainer>
-        <Footer />
+        <BrowserRouter>
+          <Header />
+          <PageContainer />
+          <Footer />
+        </BrowserRouter>
       </ProductsProvider>
     </div>
   )
