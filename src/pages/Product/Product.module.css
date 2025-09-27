@@ -1,0 +1,81 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    align-items: flex-end;
+}
+
+.backLink {
+    composes: flexContainer from '../../global-styles/flex.css';
+    color: var(--color-accent);
+    gap: 0.5rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: var(--color-accent-light);
+        transform: scale(1.03);
+        text-decoration: underline;
+    }
+}
+
+.productContainer {
+    composes: flexContainer from '../../global-styles/flex.css';
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.imageSection {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 40%;
+    gap: 1rem;
+}
+
+.currentImage {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--color-grey);
+    border-radius: 8px;
+}
+
+.thumbnailGrid {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.3rem;
+}
+
+.imageSelector {
+    height: auto;
+    width: 33.3%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-grey);
+    border-radius: 8px;
+    cursor: pointer;
+
+    & img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.imageSelector.active {
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 0 4px var(--color-accent), 0 0 8px var(--color-accent);
+}
+
+.descriptionSection {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .productContainer {
+        flex-direction: column;
+    }
+
+
+}
+
