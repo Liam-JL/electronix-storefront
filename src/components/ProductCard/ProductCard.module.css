@@ -31,10 +31,11 @@
 
 .imageLink {
     padding: 1rem;
+    flex: 1;
 }
 
 .productImage {
-    object-fit: cover;
+    object-fit: contain;
     height: 100%;
 }
 
@@ -57,6 +58,7 @@
     align-content: center;
     display: flex;
     flex-direction: column;
+    
 }
 
 .title {
