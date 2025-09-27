@@ -1,5 +1,3 @@
 .landing {
   composes: flexContainer from "../../global-styles/flex.css";
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 }
