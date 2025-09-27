@@ -1,6 +1,7 @@
 import styles from './Footer.module.css'
 import Logo from '../Logo/Logo';
 import { IoChatbubblesSharp as ChatIcon, IoCall as CallIcon, IoMail as MailIcon, IoLogoGithub as GithubIcon  } from "react-icons/io5";
+import { Link } from 'react-router';
 
 function Footer() {
     return (
@@ -14,10 +15,10 @@ function Footer() {
                 <h2>Useful Links</h2>
                 <ul>
                     <li>
-                        <a href='#'>Return Policy</a>
+                        <Link to='/error'>Return Policy</Link>
                     </li>
                     <li>
-                        <a href='#'>Shipping Information</a>
+                        <Link to='/error'>Shipping Information</Link>
                     </li>
                     <li>
                         <a href='https://logoipsum.com/'>Logoipsum</a>
@@ -41,7 +42,7 @@ function Footer() {
                     </li>
                     <li>
                         <ChatIcon />
-                        <a href='#'>Chat With Us</a>
+                        <Link to='/error'>Chat With Us</Link>
                     </li>
                     <li>
                         <GithubIcon />

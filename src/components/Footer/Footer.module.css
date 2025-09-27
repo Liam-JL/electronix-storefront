@@ -64,6 +64,10 @@
         align-items: center;
     }
 
+    .usefulLinks, .contactLinks {
+        align-items: center;
+    }
+
     .about {
         align-items: center;
         text-align: center;

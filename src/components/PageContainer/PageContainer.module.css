@@ -7,7 +7,7 @@
 
 .pageBackground {
     position: absolute;
-    background-image: url('../../../public/circuit-board.svg');
+    background-image: url('/circuit-board.svg');
     height: 100%;
     width: 100%;
     z-index: -1;
