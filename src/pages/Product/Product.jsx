@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { useProductsContext } from "../../context/ProductsContext";
 import styles from './Product.module.css'
 import { useState } from "react";
-import { FaArrowLeft } from "react-icons/fa6";
+
 import ProductCard from "../../components/ProductCard/ProductCard";
 
 
@@ -22,16 +22,17 @@ function Product() {
     };
     
     return (
-        <div className={styles.pageContainer}>
-            <Link to='/store'><span className={styles.backLink}><FaArrowLeft />Back to Shop</span></Link>
-            <section className={styles.productContainer}>
+       
+        <section className={styles.productContainer}>
                 <div className={styles.imageSection}>
+                    <div className={styles.currentImageContainer}>
+                        <img
+                            src={product.images[currentImage]}
+                            className={styles.currentImage}
+                            alt=""
+                        />
+                    </div>
 
-                    <img
-                        src={product.images[currentImage]}
-                        className={styles.currentImage}
-                        alt=""
-                    />
 
                     <div className={styles.thumbnailGrid}>
                         {product.images.map((imageSrc, index) => 
@@ -52,7 +53,7 @@ function Product() {
                 </div>        
             </section>
 
-        </div>
+                
     );
 }
 

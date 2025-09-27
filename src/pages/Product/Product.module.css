@@ -1,28 +1,13 @@
-.pageContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 2rem;
-    align-items: flex-end;
-}
 
-.backLink {
-    composes: flexContainer from '../../global-styles/flex.css';
-    color: var(--color-accent);
-    gap: 0.5rem;
-    transition: all 0.3s ease-in-out;
 
-    &:hover {
-        color: var(--color-accent-light);
-        transform: scale(1.03);
-        text-decoration: underline;
-    }
-}
 
 .productContainer {
-    composes: flexContainer from '../../global-styles/flex.css';
+    display: flex;
+    padding: 2rem;
     gap: 1rem;
     align-items: stretch;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .imageSection {
@@ -33,30 +18,38 @@
     gap: 1rem;
 }
 
-.currentImage {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
+.currentImageContainer {
     border: 1px solid var(--color-grey);
     border-radius: 8px;
+    flex: 1 1 70%;
+    overflow: hidden;
+}
+
+.currentImage {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 .thumbnailGrid {
     display: flex;
-    justify-content: flex-start;
     gap: 0.3rem;
+    flex: 0 0 20%;
+    overflow-x: auto;
 }
 
 .imageSelector {
-    height: auto;
-    width: 33.3%;
     padding: 0.5rem;
     border: 1px solid var(--color-grey);
     border-radius: 8px;
     cursor: pointer;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+
 
     & img {
-        object-fit: cover;
+        object-fit: contain;
         height: 100%;
         width: 100%;
     }
@@ -67,9 +60,6 @@
     box-shadow: 0 0 4px var(--color-accent), 0 0 8px var(--color-accent);
 }
 
-.descriptionSection {
-    display: flex;
-}
 
 @media (max-width: 768px) {
     .productContainer {
