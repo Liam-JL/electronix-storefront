@@ -6,6 +6,7 @@
     background-color: var(--color-white);
     flex: 1;
     height: 100%;
+    position: relative;
 
 
     &:hover {
@@ -35,6 +36,20 @@
 .productImage {
     object-fit: cover;
     height: 100%;
+}
+
+.backLink {
+    composes: flexContainer from '../../global-styles/flex.css';
+    color: var(--color-accent);
+    gap: 0.5rem;
+    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+    position: absolute;
+    right: 1rem;
+
+    &:hover {
+        color: var(--color-accent-light);
+        text-decoration: underline;
+    }
 }
 
 .details {
@@ -127,3 +142,8 @@ input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
 
+@media (max-width: 768px) {
+    .backLink *{
+        display: none;
+    }
+}

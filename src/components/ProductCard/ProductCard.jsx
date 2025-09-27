@@ -1,6 +1,7 @@
 import styles from './ProductCard.module.css' 
 import {IoCartOutline as CartIcon} from "react-icons/io5";
 import { Link } from 'react-router';
+import { FaArrowLeft } from "react-icons/fa6";
 
 function ProductCard({product, extended=false}) {
 
@@ -13,6 +14,8 @@ function ProductCard({product, extended=false}) {
             <Link to={`:${product.id}`} className={styles.imageLink}>
                 <img src={product.images[0]} alt=''  className={styles.productImage}/>
             </Link>
+
+            {extended && <Link to='/store' className={styles.backLink}><FaArrowLeft /><span>Back to Shop</span></Link>}
         
             <div className={styles.details}>
                 <h2 className={styles.title}>{product.title}</h2>
