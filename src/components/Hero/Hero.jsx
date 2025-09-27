@@ -13,7 +13,7 @@ function Hero() {
         </div>
 
         <div className={styles.heroRightContainer}>
-          <img src="../../../public/hero-image.png" alt="" />
+          <img src="/hero-image.png" alt="" />
         </div>
     </div>
   );

@@ -4,7 +4,7 @@ function Logo({small = false, dark = false}) {
     return (
         <span className={small ? styles.smallLogo : styles.logo}>
             <img 
-                src={`../../../public/logoipsum-${dark ? "dark" : "light"}.svg`} 
+                src={`/logoipsum-${dark ? "dark" : "light"}.svg`} 
                 alt=""
             />
             <h1 className={dark ? styles.dark : ""}>Electronix</h1>
