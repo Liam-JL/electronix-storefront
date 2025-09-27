@@ -12,7 +12,7 @@ function Store() {
     }
 
     return (
-        <main className={styles.store} aria-label="Main Store Page">
+        <section className={styles.store} aria-label="Main Store Page">
             <header className={styles.header}>
                 <h1>Our Collection</h1>
                 <p>Explore the latest electronics, hand-picked to power your everyday life with style and performance.</p>
@@ -21,7 +21,7 @@ function Store() {
                 <FilterBar activeCategory={activeCategory} handleFilterButton={handleFilterButton}/>
                 <ProductGrid activeCategory={activeCategory}/>
             </section>
-        </main>
+        </section>
     );
 }
 
@@ -42,15 +42,17 @@ function FilterBar( {activeCategory, handleFilterButton} ) {
 function ProductGrid( {activeCategory}) {
     const { products, loading, error } = useProductsContext();
 
+    if (!Array.isArray(products)) return  <p>No Products Available</p>
     if (loading) return <p>Loading Products...</p>
     if (error) return <p>{error}</p>
 
     function filtered(products) {
+        
         if(activeCategory === "all") {
             return products.filter((product) => 
-                product.category === "smartphones" |
-                product.category === "laptops" |
-                product.category === "tablets" |
+                product.category === "smartphones" ||
+                product.category === "laptops" ||
+                product.category === "tablets" ||
                 product.category === "mobile-accessories"
             )
         }
