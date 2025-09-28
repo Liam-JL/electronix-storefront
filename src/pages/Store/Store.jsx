@@ -2,7 +2,6 @@ import { useProductsContext } from "../../context/ProductsContext";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import styles from './Store.module.css'
 import { useState } from "react";
-import { SiStyleshare } from "react-icons/si";
 
 function Store() {
     const [activeCategory, setActiveCategory] = useState("all");

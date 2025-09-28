@@ -6,17 +6,20 @@ import Landing from './pages/Landing/Landing';
 import Store from './pages/Store/Store';
 import styles from './App.module.css'
 import { ProductsProvider } from './context/ProductsContext';
+import { CartProvider } from './context/CartContext';
 
 function App() {
 
   return (
     <div className={styles.app}>
       <ProductsProvider>
-        <BrowserRouter>
-          <Header />
-          <PageContainer />
-          <Footer />
-        </BrowserRouter>
+        <CartProvider>
+          <BrowserRouter>
+            <Header />
+            <PageContainer />
+            <Footer />
+          </BrowserRouter>
+        </CartProvider>
       </ProductsProvider>
     </div>
   )

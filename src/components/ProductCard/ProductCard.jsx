@@ -1,14 +1,17 @@
 import styles from './ProductCard.module.css' 
 import {IoCartOutline as CartIcon} from "react-icons/io5";
-import { Link } from 'react-router';
 import { FaArrowLeft } from "react-icons/fa6";
+import { Link } from 'react-router';
 import { useState } from 'react';
+import { useCartContext } from '../../context/CartContext';
+
 
 function ProductCard({product, extended=false}) {
+    const {addToCart} = useCartContext();
     const [currentQuantity, setCurrentQuantity] = useState(1);
 
     function handleAddToCart() {
-        console.log("Add to cart button clicked")
+        addToCart(product, currentQuantity);
     };
 
     function increaseQuantity() {
@@ -37,7 +40,7 @@ function ProductCard({product, extended=false}) {
 
             <footer className={styles.actions}>
                 <div className={styles.quantityWrapper}>
-                    <label className="sr-only" for={`quantity-${product.id}`}>{`Quantity for: ${product.title}`}</label>
+                    <label className="sr-only" htmlFor={`quantity-${product.id}`}>{`Quantity for: ${product.title}`}</label>
                     <button className={styles.quantityButton} aria-label='Decrease quantity' onClick={decreaseQuantity}>-</button>
                     <input 
                         className={styles.quantityInput} 
