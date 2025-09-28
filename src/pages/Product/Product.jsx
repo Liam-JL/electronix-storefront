@@ -2,7 +2,6 @@ import { Link } from "react-router";
 import { useProductsContext } from "../../context/ProductsContext";
 import styles from './Product.module.css'
 import { useState } from "react";
-
 import ProductCard from "../../components/ProductCard/ProductCard";
 
 
@@ -37,6 +36,7 @@ function Product() {
                     <div className={styles.thumbnailGrid}>
                         {product.images.map((imageSrc, index) => 
                         <button 
+                            key={index}
                             className={`${styles.imageSelector} ${currentImage === index ?  styles.active : ""}`} 
                             data-index={index}
                             onClick={handleImageSelect}
