@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import Logo from "../Logo/Logo";
 import styles from './Header.module.css'
 import { Link } from "react-router";
+import { useCartContext } from '../../context/CartContext';
 
 function Header() {
 
@@ -43,6 +44,16 @@ export function SearchBar() {
 }
 
 export function Nav() {
+    const {cartItems} = useCartContext();
+
+    function cartCount() {
+        let count = 0;
+        for (const item of cartItems) {
+            count = count + item.quantity
+        }
+        return count;
+    }
+
     return(
         <nav className={styles.nav} aria-label="Main navigation">
             <ul className={styles.navUl}>
@@ -55,7 +66,7 @@ export function Nav() {
                 <li>
                     <Link to="/cart" aria-label="Go to Cart" className={styles.navLink}> 
                         <CartIcon className={`${styles.navIcon} ${styles.tiltIcon}`} />
-                        <span aria-live="polite">0</span>
+                        <span aria-live="polite">{cartCount()}</span>
                     </Link>    
                 </li>
             </ul>
