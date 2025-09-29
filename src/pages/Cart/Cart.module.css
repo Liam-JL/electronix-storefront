@@ -27,14 +27,15 @@
     border-radius: 8px;
 }   
 
-.cartContainer {
-
-}
-
 .itemList {
 
 }
 
-.summaryCard{
+.itemListFooter {
+    composes: flexContainer from '../../global-styles/flex.css';
+    gap: 1rem;
+}
+
+.summaryCard {
 
 }

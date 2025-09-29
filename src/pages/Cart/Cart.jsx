@@ -1,6 +1,9 @@
 import { Link } from "react-router";
 import { useCartContext } from "../../context/CartContext";
 import styles from './Cart.module.css'
+import { CiDeliveryTruck } from "react-icons/ci";
+import CartItemCard from "../../components/CartItem/CartItemCard";
+
 
 function Cart() {
     const {cartItems} = useCartContext();
@@ -12,7 +15,7 @@ function Cart() {
                 <p>Review Your items before proceeding to checkout</p>
             </header>
             {cartItems.length < 1 && <EmptyCart />}
-            {cartItems.length > 0 && <ItemList />}
+            {cartItems.length > 0 && <ItemList/>}
             {cartItems.length > 0 && <SummaryCard />}
         </section>
     );
@@ -27,6 +30,17 @@ export function EmptyCart() {
     )
 }
 
+
+export function ItemList() {
+    const {cartItems} = useCartContext();
+    return (
+        <section className={styles.itemList}>
+            {cartItems.map(item => <CartItemCard item={item}/>)}
+            <footer className={styles.itemListFooter}><CiDeliveryTruck /> You can choose your delivery preferences at checkout</footer>
+        </section>
+    )
+}
+
 export function SummaryCard () {
     return (
         <aside className={styles.summaryCard}>
@@ -35,34 +49,6 @@ export function SummaryCard () {
     )
 }
 
-export function ItemList() {
-    return (
-        <section className={styles.itemList}>
-
-        </section>
-    )
-}
-
-export function ItemCard(item) {
-    return (
-        <article>
-            <div className={styles.thumbnailContainer}>
-                <img
-                    src="image source"
-                    class={styles.thumbnail}
-                    alt=""
-                />
-            </div>
-            <div>
-                Details
-            </div>
-                Quantity
-            <div>
-                Remove
-            </div>
-        </article>
-    )
-}
 
 export default Cart;
 
