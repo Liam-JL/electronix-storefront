@@ -17,12 +17,20 @@ export function CartProvider({ children }) {
          })
     }
 
-    function removeFromCart(productId) {
+    function updateCart(product, quantity = 1) {
+        setCartItems(prevItems => {
+            return prevItems.map(item => 
+                item.id === product.id ? {...item, quantity} : item
+            );
+        })
+    }
 
+    function removeFromCart(productId) {
+        setCartItems(prevItems => prevItems.filter(item => item.id !== productId));
     }
 
     function clearCart() {
-        
+        setCartItems([])
     }
 
     useEffect(() => {
@@ -31,7 +39,7 @@ export function CartProvider({ children }) {
 
     return (
         <CartContext.Provider 
-        value={{cartItems, addToCart, removeFromCart, clearCart}}
+        value={{cartItems, addToCart, updateCart, removeFromCart, clearCart}}
         >
             {children}
         </CartContext.Provider>
