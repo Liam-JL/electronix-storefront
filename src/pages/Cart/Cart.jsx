@@ -46,7 +46,20 @@ export function ItemList() {
 export function ItemCard(item) {
     return (
         <article>
-            
+            <div className={styles.thumbnailContainer}>
+                <img
+                    src="image source"
+                    class={styles.thumbnail}
+                    alt=""
+                />
+            </div>
+            <div>
+                Details
+            </div>
+                Quantity
+            <div>
+                Remove
+            </div>
         </article>
     )
 }
