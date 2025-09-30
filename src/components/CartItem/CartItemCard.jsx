@@ -24,7 +24,7 @@ function CartItemCard({item}) {
             <section className={styles.itemDetails}>
                 <h2 className={styles.itemTitle}>{item.title}</h2>
                 <div className={styles.itemCardMain}>
-                    <label htmlFor={`quantity-${item.id}`}>Quantity</label>
+                    <label htmlFor={`quantity-${item.id}`}>Quantity:</label>
                     <select 
                         name="quantity" 
                         id={`quantity-${item.id}`}
@@ -33,8 +33,14 @@ function CartItemCard({item}) {
                     >
                         {options}
                     </select>
-                    <button aria-label="Remove Item" onClick={() => removeFromCart(item.id)}><FaTrash /></button>
-                    <span className={styles.price}>{`£${item.price * item.quantity}`}</span>
+                    <button 
+                        aria-label="Remove Item" 
+                        onClick={() => removeFromCart(item.id)}
+                        className={styles.removeButton}
+                    >
+                        <FaTrash />
+                    </button>
+                    <span className={styles.price}>{`£${(item.price * item.quantity).toFixed(2)}`}</span>
                 </div>
             </section>
         </article>
