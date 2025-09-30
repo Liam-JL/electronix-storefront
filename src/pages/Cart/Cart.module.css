@@ -12,6 +12,16 @@
     }
 }
 
+.sectionMessage {
+    composes: flexContainer from '../../global-styles/flex.css';
+    gap: 1rem;
+}
+
+.sectionMain {
+    display: flex;
+    gap: 4rem;
+}
+
 .emptyCart {
     display: flex;
     flex-direction: column;
@@ -27,15 +37,56 @@
     border-radius: 8px;
 }   
 
-.itemList {
-
-}
-
-.itemListFooter {
-    composes: flexContainer from '../../global-styles/flex.css';
-    gap: 1rem;
-}
 
 .summaryCard {
+    border: 1px solid var(--color-grey);
+    border-radius: 8px;
+    padding: 2rem;
+    background-color: var(--color-white);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+}
 
+.itemList {
+    flex: 0 1 auto
+}
+
+.summaryMain {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0rem;
+    border-top: 1px solid var(--color-grey);
+    border-bottom: 1px solid var(--color-grey);
+    
+    
+    &  span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.summaryFooter {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0rem;
+    gap: 0.5rem;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+
+    & span {
+        font-size: 1.3rem;
+    }
+}
+
+.checkoutBtn {
+    composes: accentedButton from '../../components/Button/Button.module.css';
+    border-radius: 8px;
 }
