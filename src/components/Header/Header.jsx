@@ -7,16 +7,12 @@ import { useCartContext } from '../../context/CartContext';
 
 function Header() {
 
-    function openNavAside() {
-        console.log("Nav Aside button clicked")
-    }
 
     return (
         <header className={styles.header}>
             <Link to="/"><Logo /></Link>
             <SearchBar /> 
             <Nav />
-            <Button onClick={openNavAside} icon={<MenuIcon />} ariaLabel={"Open Nav Sidebar"}/> 
         </header>
     );
 }
@@ -60,13 +56,13 @@ export function Nav() {
                 <li>
                     <Link to="/store" aria-label="Go to Shop" className={styles.navLink}>
                         <ShopIcon className={styles.navIcon} />
-                        <span>SHOP</span>
+                        <span className={styles.navLinkLabel}>SHOP</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/cart" aria-label="Go to Cart" className={styles.navLink}> 
                         <CartIcon className={`${styles.navIcon} ${styles.tiltIcon}`} />
-                        <span aria-live="polite">{cartCount()}</span>
+                        <span className={styles.navCartCount} aria-live="polite">{cartCount()}</span>
                     </Link>    
                 </li>
             </ul>

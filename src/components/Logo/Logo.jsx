@@ -6,6 +6,7 @@ function Logo({small = false, dark = false}) {
             <img 
                 src={`/logoipsum-${dark ? "dark" : "light"}.svg`} 
                 alt=""
+                className={styles.svg}
             />
             <h1 className={dark ? styles.dark : ""}>Electronix</h1>
         </span>

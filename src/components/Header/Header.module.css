@@ -1,5 +1,6 @@
 .header {
     display: flex;
+    gap: 1rem;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2.5rem;
@@ -64,6 +65,7 @@
 .navUl {
     composes: flexContainer from "../../global-styles/flex.css";
     gap: 2rem;
+    flex: 1 0 auto;
 }
 
 .navLink {
@@ -101,7 +103,20 @@
         display: none;
     }
 
-    .header .nav {
+    .navUl {
+        gap: 1rem;
+    }
+
+    .navLinkLabel {
         display: none;
+    }
+
+    .navCartCount {
+        font-size: 0.9rem;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        transform: translateY(50%);
+        padding-right: 0.3rem;
     }
 }
