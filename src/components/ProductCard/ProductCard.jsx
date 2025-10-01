@@ -55,10 +55,31 @@ function ProductCard({product, extended=false}) {
                     />
                     <button className={styles.quantityButton} aria-label='Increase quantity' onClick={increaseQuantity}>+</button>
                 </div>
-                <button className={styles.addButton} onClick={handleAddToCart}><CartIcon /> Add</button>
+                <AddButton handleAddToCart={handleAddToCart} />
             </footer>
         </article>
     )
 }
+
+function AddButton({ handleAddToCart }) {
+    const [clicked, setClicked] = useState(false);
+
+    function handleClick(e) {
+        handleAddToCart(e);
+        setClicked(true);
+        setTimeout(() => setClicked(false), 1500);
+    }
+
+    return (
+        <button className={styles.addButton} onClick={handleClick}>
+            <CartIcon />
+            <span className={styles.addButtonText}>
+                <span className={clicked ? styles.hidden : styles.visible}>Add</span>
+                <span className={clicked ? styles.visible : styles.hidden}>Added</span>
+            </span>
+        </button>
+    );
+}
+
 
 export default ProductCard;
