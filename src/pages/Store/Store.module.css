@@ -40,7 +40,6 @@
     padding: 0.5rem;
     border-radius: 8px;
     display: flex;
-    justify-content: space-between;
     gap: 0.5rem;
 
 }
@@ -76,13 +75,16 @@
         padding: 0.5rem;
     }
 
+    .header h1 {
+        font-size: 2rem;
+    }
+
     .filterBar {
         flex-wrap: wrap;
     }
 
     .filterButton {
-        flex: 1;
-        min-width: 100px;
+        flex: 1 0 100px;
     }
 
     .productGridContainer {

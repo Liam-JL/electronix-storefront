@@ -133,6 +133,21 @@
     flex: 1;
 }
 
+.visible {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease-in-out;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+    position: absolute;
+    transform: translateY(-100%);
+}
+
+
+
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
@@ -147,5 +162,14 @@ input[type=number] {
 @media (max-width: 768px) {
     .backLink *{
         display: none;
+    }
+
+    .card {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .card:hover {
+        transform: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 }

@@ -3,6 +3,7 @@ import { useCartContext } from "../../context/CartContext";
 import styles from './Cart.module.css'
 import { CiDeliveryTruck } from "react-icons/ci";
 import CartItemCard from "../../components/CartItem/CartItemCard";
+import { FaArrowLeft } from "react-icons/fa";
 
 function Cart() {
     const {cartItems} = useCartContext();
@@ -38,6 +39,7 @@ export function ItemList() {
     return (
         <section className={styles.itemList}>
             {cartItems.map(item => <CartItemCard key={item.id} item={item}/>)}
+            <Link to='/store' className={styles.backLink}><FaArrowLeft /><span>Continue Shopping</span></Link>
         </section>
     )
 }
