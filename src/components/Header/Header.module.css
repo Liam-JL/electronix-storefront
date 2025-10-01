@@ -112,11 +112,17 @@
     }
 
     .navCartCount {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         position: absolute;
-        top: 0px;
-        right: 0px;
-        transform: translateY(50%);
-        padding-right: 0.3rem;
+        top: 9px;
+        right: 5px;
+        width: 1.2rem;
+        height: 1.2rem;
+        background-color: var(--color-accent);
+        color: var(--color-white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
