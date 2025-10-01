@@ -148,4 +148,13 @@ input[type=number] {
     .backLink *{
         display: none;
     }
+
+    .card {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .card:hover {
+        transform: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
 }
