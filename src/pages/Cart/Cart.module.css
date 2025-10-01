@@ -90,3 +90,15 @@
     composes: accentedButton from '../../components/Button/Button.module.css';
     border-radius: 8px;
 }
+
+.backLink {
+    composes: flexContainer from '../../global-styles/flex.css';
+    justify-content: flex-start;
+    gap: 1rem;
+    color: var(--color-accent);
+    transition: color ease-in-out 0.2s;
+
+    &:hover {
+        color: var(--color-accent-light);
+    }
+}
