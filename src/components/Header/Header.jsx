@@ -4,6 +4,8 @@ import Logo from "../Logo/Logo";
 import styles from './Header.module.css'
 import { Link } from "react-router";
 import { useCartContext } from '../../context/CartContext';
+import { useEffect, useRef} from "react";
+
 
 function Header() {
 
@@ -41,14 +43,19 @@ export function SearchBar() {
 
 export function Nav() {
     const {cartItems} = useCartContext();
+    const badgeRef = useRef(null);
 
     function cartCount() {
-        let count = 0;
-        for (const item of cartItems) {
-            count = count + item.quantity
-        }
-        return count;
+        return cartItems.reduce((sum, item) => sum + item.quantity, 0);
     }
+
+    useEffect(() => {
+        if (!badgeRef.current) return;
+        const el = badgeRef.current;
+        el.classList.add(styles.bump);
+        const remove = () => el.classList.remove(styles.bump);
+        el.addEventListener("animationend", remove, { once: true });
+    }, [cartItems]);
 
     return(
         <nav className={styles.nav} aria-label="Main navigation">
@@ -62,7 +69,13 @@ export function Nav() {
                 <li>
                     <Link to="/cart" aria-label="Go to Cart" className={styles.navLink}> 
                         <CartIcon className={`${styles.navIcon} ${styles.tiltIcon}`} />
-                        <span className={styles.navCartCount} aria-live="polite">{cartCount()}</span>
+                        <span
+                            ref={badgeRef} 
+                            className={styles.navCartCount} 
+                            aria-live="polite"
+                        >
+                            {cartCount()}
+                        </span>
                     </Link>    
                 </li>
             </ul>
