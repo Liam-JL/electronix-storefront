@@ -2,7 +2,7 @@ import { IoSearch as SearchIcon, IoCartOutline as CartIcon, IoMenu as MenuIcon, 
 import Button from '../Button/Button';
 import Logo from "../Logo/Logo";
 import styles from './Header.module.css'
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useCartContext } from '../../context/CartContext';
 import { useEffect, useRef} from "react";
 
@@ -20,9 +20,13 @@ function Header() {
 }
 
 export function SearchBar() {
+    const navigate = useNavigate();
+
     function handleSubmit(e) {
         e.preventDefault()
-        console.log("Search made")
+        const searchTerm = e.target.search.value;
+        e.target.search.value = '';
+        navigate(`/store?search=${encodeURIComponent(searchTerm)}`)
     }
 
     return (
