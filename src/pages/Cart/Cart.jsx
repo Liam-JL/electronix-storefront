@@ -1,12 +1,22 @@
 import { Link } from "react-router";
 import { useCartContext } from "../../context/CartContext";
-import styles from './Cart.module.css'
-import { CiDeliveryTruck } from "react-icons/ci";
+import { useRef } from "react";
 import CartItemCard from "../../components/CartItem/CartItemCard";
+import CheckoutDialog from "../../components/CheckoutDialog/CheckoutDialog";
+import { CiDeliveryTruck } from "react-icons/ci";
 import { FaArrowLeft } from "react-icons/fa";
+import styles from './Cart.module.css'
 
 function Cart() {
     const {cartItems} = useCartContext();
+    const checkoutDialogRef = useRef();
+
+    function toggleCheckoutDialog() {
+        if (!checkoutDialogRef.current) return;
+        checkoutDialogRef.current.hasAttribute("open") ? 
+            checkoutDialogRef.current.close() : 
+            checkoutDialogRef.current.showModal();
+    }
 
     return (
         <section className={styles.sectionContainer}>
@@ -18,9 +28,10 @@ function Cart() {
             {cartItems.length > 0 &&
                 <div className={styles.sectionMain}>
                     <ItemList />
-                    <SummaryCard />
+                    <SummaryCard  toggleCheckoutDialog={toggleCheckoutDialog}/>
                 </div>
             }
+        <CheckoutDialog toggleCheckoutDialog={toggleCheckoutDialog} ref={checkoutDialogRef} />
         </section>
     );
 }
@@ -44,7 +55,7 @@ export function ItemList() {
     )
 }
 
-export function SummaryCard () {
+export function SummaryCard ({ toggleCheckoutDialog }) {
     const {cartItems} = useCartContext();
 
     function calcSubtotal() {
@@ -83,7 +94,7 @@ export function SummaryCard () {
 
             <footer className={styles.summaryFooter}>
                 <span className={styles.total}><h2>Total</h2><span>{formatGBP(calcSubtotal() + calcShipping())}</span></span>
-                <button className={styles.checkoutBtn}>Checkout</button>
+                <button className={styles.checkoutBtn} onClick={toggleCheckoutDialog}>Checkout</button>
             </footer>
         </aside>
     )
