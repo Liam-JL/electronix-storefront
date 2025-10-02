@@ -2,9 +2,13 @@ import { useProductsContext } from "../../context/ProductsContext";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import styles from './Store.module.css'
 import { useState } from "react";
+import { useLocation } from "react-router";
 
 function Store() {
     const [activeCategory, setActiveCategory] = useState("all");
+    const { search } = useLocation();
+    const params = new URLSearchParams(search);
+    const searchTerm = params.get('search') || '';
 
     function handleFilterButton(e) {
         setActiveCategory(e.target.getAttribute("data-category"))
@@ -18,7 +22,7 @@ function Store() {
             </header>
             <section>
                 <FilterBar activeCategory={activeCategory} handleFilterButton={handleFilterButton}/>
-                <ProductGrid activeCategory={activeCategory}/>
+                <ProductGrid activeCategory={activeCategory} searchTerm={searchTerm}/>
             </section>
         </section>
     );
@@ -38,7 +42,7 @@ function FilterBar( {activeCategory, handleFilterButton} ) {
     )
 }
 
-function ProductGrid( {activeCategory}) {
+function ProductGrid( {activeCategory, searchTerm}) {
     const { products, loading, error } = useProductsContext();
 
     if (!Array.isArray(products)) return  <p>No Products Available</p>
@@ -46,17 +50,22 @@ function ProductGrid( {activeCategory}) {
     if (error) return <p>{error}</p>
 
     function filtered(products) {
-        
-        if(activeCategory === "all") {
-            return products.filter((product) => 
+        const categoryFiltered = activeCategory === "all" ? 
+            products.filter((product) => 
                 product.category === "smartphones" ||
                 product.category === "laptops" ||
                 product.category === "tablets" ||
                 product.category === "mobile-accessories"
-            )
-        }
+            ) :
+            products.filter((product) => product.category === activeCategory);
 
-        return products.filter((product) => product.category === activeCategory);
+            if (!searchTerm) return categoryFiltered;
+
+           const term = searchTerm.toLowerCase();
+           
+           return categoryFiltered.filter((product) => 
+            product.title.toLowerCase().includes(term)
+        );
     }
 
     return (
