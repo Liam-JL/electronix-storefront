@@ -1,13 +1,9 @@
-
-
-
 .productContainer {
     display: flex;
     padding: 2rem;
     gap: 1rem;
     align-items: stretch;
-    max-height: 80vh;
-    overflow-y: auto;
+    min-height: 80vh;
 }
 
 .imageSection {
