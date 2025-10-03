@@ -4,6 +4,8 @@ A front-end electronics store built with React. Portfolio project based on the â
 
 ![Screenshot of Electronix Store page](./public/Screenshot%202025-10-03%20104819.png)
 
+View Live: https://electronix-shop.netlify.app/
+
 ## Features
 - Product listing with card layout
 - Category filtering
