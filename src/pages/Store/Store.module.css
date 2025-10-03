@@ -41,9 +41,10 @@
         auto-fit,
         minmax(200px, 1fr)
     );
-    align-items: stretch;
     position: relative;
     animation: fadeInUp 1.3s;
+    grid-auto-rows: 1fr;
+    align-items: stretch;
 }
 
 @keyframes fadeInUp {
