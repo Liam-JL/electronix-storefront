@@ -1,12 +1,44 @@
-# React + Vite
+# Electronix: E-Commerce App (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A front-end electronics store built with React. Portfolio project based on the “Shopping Cart” assignment from The Odin Project. ([theodinproject.com](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart))
 
-Currently, two official plugins are available:
+![Screenshot of Electronix Store page](./public/Screenshot%202025-10-03%20104819.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Product listing with card layout
+- Category filtering
+- Search bar
+- Shopping cart with quantity controls (increment, decrement, manual input)
+- Real-time cart count indicator in navbar
+- Responsive layout
+- No checkout or payment integration
 
-## Expanding the ESLint configuration
+## Data and Assets
+- Products from [DummyJSON](https://dummyjson.com/)
+- Logo from [Logoipsum](https://logoipsum.com/)
+- Styled as a contemporary electronics retailer with a clean, minimal interface
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Architecture
+- Five pages: Landing, Shop, Product, Cart, Error
+- Navbar persistent across pages with dynamic cart indicator
+- Cart page supports quantity adjustment and item removal
+- Component-based structure (ProductCard, CartItem, Navbar)
+- State management with React Context and hooks
+- Scoped styling with CSS Modules
+
+## Tech Stack
+- React
+- React Router
+- Context API / Hooks
+- CSS Modules
+
+## Setup
+`git clone https://github.com/Liam-JL/electronix-storefront && cd electronix-storefront && npm install && npm start`
+
+## Limitations
+- No real backend or database
+- No payment or checkout
+- Future additions could include authentication, product details pages, and persistence
+
+## License
+MIT
