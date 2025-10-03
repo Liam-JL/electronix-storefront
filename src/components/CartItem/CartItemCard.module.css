@@ -3,7 +3,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-
 }
 
 .thumbnailContainer {
@@ -29,11 +28,16 @@
     gap: 1rem;
 }
 
+.quantitySelect {
+    color: var(--color-black);
+}
+
 .removeButton {
     padding: 0.2rem;
     border: none;
     background: none;
     transition: color ease-in-out 0.2s;
+    color: var(--color-black);
     
     &:hover {
         color: var(--color-accent);

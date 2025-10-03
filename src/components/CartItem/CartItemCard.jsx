@@ -26,6 +26,7 @@ function CartItemCard({item}) {
                 <div className={styles.itemCardMain}>
                     <label htmlFor={`quantity-${item.id}`}>Quantity:</label>
                     <select 
+                        className={styles.quantitySelect}
                         name="quantity" 
                         id={`quantity-${item.id}`}
                         defaultValue={item.quantity || 1}
