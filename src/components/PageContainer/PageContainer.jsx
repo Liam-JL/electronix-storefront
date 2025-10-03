@@ -1,18 +1,19 @@
 import styles from './PageContainer.module.css'
-import { Route, Routes } from 'react-router'
+import { Route, Routes, useLocation } from 'react-router'
+import { useRef, useLayoutEffect } from 'react'
 import Landing from '../../pages/Landing/Landing'
 import Store from '../../pages/Store/Store'
 import Cart from '../../pages/Cart/Cart'
 import Error from '../../pages/Error/Error'
 import Product from '../../pages/Product/Product'
 import Checkout from '../../pages/Checkout/Checkout'
-import ScrollToTop from '../ScrollToTop'
 
 function PageContainer () {
+    const containerRef = useRef(null);
 
     return (
         <main className={styles.pageContainer}>
-            <ScrollToTop />
+            <ScrollToTop containerRef={containerRef} />
             <Routes>
                 <Route path='/' element={<Landing />} />
                 <Route path='/store' element={<Store />} />
@@ -26,4 +27,13 @@ function PageContainer () {
     )
 }
 
+function ScrollToTop({ containerRef }) {
+  const { pathname } = useLocation();
+  useLayoutEffect(() => {
+    if (containerRef?.current) containerRef.current.scrollTop = 0;
+  }, [pathname, containerRef]);
+  return null;
+}
+
 export default PageContainer
+
