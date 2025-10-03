@@ -14,8 +14,18 @@
     }
 }
 
-.productGridContainer {
-    padding: 1rem;
+.storeMain {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.clearSearchButton {
+    composes: button from '../../components/Button/Button.module.css';
+    min-width: 300px;
+    border: 3px solid var(--color-white);
+    align-self: center;
 }
 
 .productGrid {
@@ -69,6 +79,13 @@
         box-shadow: 0 0 8px var(--color-accent), 0 0 16px var(--color-accent-light);
 }
 
+.noProductsMessage {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2rem;
+}
+
 @media (max-width: 768px) {
     .store {
         gap: 1rem;
@@ -77,6 +94,10 @@
 
     .header h1 {
         font-size: 2rem;
+    }
+
+    .storeMain {
+        padding: 0.2rem;
     }
 
     .filterBar {
