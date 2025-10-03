@@ -4,8 +4,6 @@
     border: 1px solid var(--color-grey);
     border-radius: 12px;
     background-color: var(--color-white);
-    flex: 1;
-    height: 100%;
     position: relative;
 
 
@@ -36,7 +34,6 @@
 
 .productImage {
     object-fit: contain;
-    height: 100%;
 }
 
 .backLink {
@@ -76,7 +73,6 @@
     border-top: 1px solid var(--color-grey);
     padding: 3rem 1rem;
     flex: 1;
-    height: 100%;
 }
 
 .actions {
@@ -166,6 +162,7 @@ input[type=number] {
 
     .card {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        height: auto;
     }
 
     .card:hover {
