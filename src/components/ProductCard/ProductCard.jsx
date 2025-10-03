@@ -5,7 +5,6 @@ import { Link } from 'react-router';
 import { useState } from 'react';
 import { useCartContext } from '../../context/CartContext';
 
-
 function ProductCard({product, extended=false}) {
     const {addToCart} = useCartContext();
     const [currentQuantity, setCurrentQuantity] = useState(1);
@@ -25,7 +24,7 @@ function ProductCard({product, extended=false}) {
 
     return (
         <article className={`${styles.card} ${extended && styles.extended}`}>
-            <Link to={`:${product.id}`} className={styles.imageLink}>
+            <Link to={`:${product.id}`} className={styles.imageLink}  onClick={() => window.scrollTo(0, 0)}>
                 <img src={product.images[0]} alt=''  className={styles.productImage}/>
             </Link>
 
@@ -80,6 +79,5 @@ function AddButton({ handleAddToCart }) {
         </button>
     );
 }
-
 
 export default ProductCard;
