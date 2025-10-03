@@ -14,6 +14,7 @@ function App() {
     <div className={styles.app}>
       <ProductsProvider>
         <CartProvider>
+          <ScrollToTop />
           <BrowserRouter>
             <Header />
             <PageContainer />
