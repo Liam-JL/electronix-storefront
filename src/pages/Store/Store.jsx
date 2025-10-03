@@ -2,10 +2,12 @@ import { useProductsContext } from "../../context/ProductsContext";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import styles from './Store.module.css'
 import { useState } from "react";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
+
 
 function Store() {
     const [activeCategory, setActiveCategory] = useState("all");
+    const navigate = useNavigate();
     const { search } = useLocation();
     const params = new URLSearchParams(search);
     const searchTerm = params.get('search') || '';
@@ -14,14 +16,19 @@ function Store() {
         setActiveCategory(e.target.getAttribute("data-category"))
     }
 
+    function clearSearch() {
+        navigate('/store');
+    }
+
     return (
         <section className={styles.store} aria-label="Main Store Page">
             <header className={styles.header}>
                 <h1>Our Collection</h1>
                 <p>Explore the latest electronics, hand-picked to power your everyday life with style and performance.</p>
             </header>
-            <section>
+            <section className={styles.storeMain}>
                 <FilterBar activeCategory={activeCategory} handleFilterButton={handleFilterButton}/>
+                {searchTerm && <button className={styles.clearSearchButton} onClick={clearSearch}>Clear Search</button>}
                 <ProductGrid activeCategory={activeCategory} searchTerm={searchTerm}/>
             </section>
         </section>
