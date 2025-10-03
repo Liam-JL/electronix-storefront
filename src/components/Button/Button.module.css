@@ -10,6 +10,8 @@
     min-height: 44px;
     padding: 8px;
     border-radius: 8px;
+    color: var(--color-black);
+    
 
     /* fix text and border rendering on transforms */
     will-change: transform, box-shadow;
