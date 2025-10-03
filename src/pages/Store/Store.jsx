@@ -4,7 +4,6 @@ import styles from './Store.module.css'
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 
-
 function Store() {
     const [activeCategory, setActiveCategory] = useState("all");
     const navigate = useNavigate();
@@ -36,7 +35,6 @@ function Store() {
 }
 
 function FilterBar( {activeCategory, handleFilterButton} ) {
-
 
     return (
         <div className={styles.filterBar}>
@@ -89,4 +87,3 @@ function ProductGrid( {activeCategory, searchTerm}) {
 }
 
 export default Store;
-

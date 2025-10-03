@@ -89,6 +89,10 @@
         font-size: 2rem;
     }
 
+    .storeMain {
+        padding: 0.2rem;
+    }
+
     .filterBar {
         flex-wrap: wrap;
     }
