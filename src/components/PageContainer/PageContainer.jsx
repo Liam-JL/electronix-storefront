@@ -6,11 +6,13 @@ import Cart from '../../pages/Cart/Cart'
 import Error from '../../pages/Error/Error'
 import Product from '../../pages/Product/Product'
 import Checkout from '../../pages/Checkout/Checkout'
+import ScrollToTop from '../ScrollToTop'
 
 function PageContainer () {
 
     return (
         <main className={styles.pageContainer}>
+            <ScrollToTop />
             <Routes>
                 <Route path='/' element={<Landing />} />
                 <Route path='/store' element={<Store />} />

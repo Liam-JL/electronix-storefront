@@ -2,8 +2,6 @@ import { BrowserRouter } from 'react-router';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import PageContainer from './components/PageContainer/PageContainer';
-import Landing from './pages/Landing/Landing';
-import Store from './pages/Store/Store';
 import ScrollToTop from './components/ScrollToTop';
 import styles from './App.module.css'
 import { ProductsProvider } from './context/ProductsContext';
