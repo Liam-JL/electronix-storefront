@@ -76,6 +76,7 @@ function ProductGrid( {activeCategory, searchTerm}) {
     return (
         <div className={styles.productGridContainer}>
             <ul className={styles.productGrid}>
+                {filtered(products).length === 0 && <span className={styles.noProductsMessage}>No Products Found</span>}
                 {filtered(products).map((product) => (
                     <li key={product.id}>
                         <ProductCard key={product.id} product={product} />

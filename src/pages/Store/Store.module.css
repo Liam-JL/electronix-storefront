@@ -79,6 +79,13 @@
         box-shadow: 0 0 8px var(--color-accent), 0 0 16px var(--color-accent-light);
 }
 
+.noProductsMessage {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2rem;
+}
+
 @media (max-width: 768px) {
     .store {
         gap: 1rem;
