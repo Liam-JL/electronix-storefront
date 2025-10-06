@@ -6,7 +6,8 @@
     background-color: var(--color-black);
     color: var(--color-white);
     padding: 1.5rem 7rem;
-    font-size: 0.9rem
+    font-size: 0.9rem;
+    flex-shrink: 0;
 }
 
 .about {

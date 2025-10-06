@@ -1,11 +1,14 @@
 .app {
+    min-height: 100vh;
+}
+
+.appContainer {
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .pageContainer {
-    flex-grow: 1;
-    align-content: center;
-    justify-content: center;
+    flex: 1;
 }
