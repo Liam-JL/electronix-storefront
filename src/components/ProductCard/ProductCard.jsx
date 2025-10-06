@@ -25,7 +25,7 @@ function ProductCard({product, extended=false}) {
     return (
         <article className={`${styles.card} ${extended && styles.extended}`}>
             <Link to={`:${product.id}`} className={styles.imageLink}  onClick={() => window.scrollTo(0, 0)}>
-                <img src={product.images[0]} alt=''  className={styles.productImage}/>
+                <img src={product.images[0]} alt='' className={styles.productImage}/>
             </Link>
 
             {extended && <Link to='/store' className={styles.backLink}><FaArrowLeft /><span>Back to Shop</span></Link>}
