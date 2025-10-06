@@ -3,7 +3,7 @@
     position: relative;
     background: linear-gradient(135deg, #ffffffe5, #e8e9eebb);
     flex: 1;
-    
+    min-height: 0;
 }
 
 .pageBackground {
