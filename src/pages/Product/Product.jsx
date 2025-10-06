@@ -23,7 +23,7 @@ function Product() {
     return (
        
         <section className={styles.productContainer}>
-                <div className={styles.imageSection}>
+
                     <div className={styles.currentImageContainer}>
                         <img
                             src={product.images[currentImage]}
@@ -46,7 +46,7 @@ function Product() {
                         )}
                     </div>
 
-                </div>
+
 
                 <div className={styles.descriptionSection}>
                     <ProductCard product={product} extended={true}/>
