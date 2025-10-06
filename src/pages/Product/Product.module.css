@@ -5,6 +5,7 @@
     padding: 2rem;
     gap: 1rem;
     max-height: 80vh;
+
 }
 
 .currentImageContainer {
@@ -70,6 +71,7 @@
     grid-template-rows: 30% 10% 60%;
     padding: 0.7rem;
     max-height: none;
+    flex: 1;
   }
 
   .currentImageContainer {
@@ -85,6 +87,8 @@
   .descriptionSection {
     grid-column: 1;
     grid-row: 3;
+    height: 95%;
+    display: flex;
   }
 }
 
