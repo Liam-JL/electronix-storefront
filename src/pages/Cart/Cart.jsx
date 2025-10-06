@@ -28,7 +28,7 @@ function Cart() {
             {cartItems.length > 0 &&
                 <div className={styles.sectionMain}>
                     <ItemList />
-                    <SummaryCard  toggleCheckoutDialog={toggleCheckoutDialog}/>
+                    <SummaryCard toggleCheckoutDialog={toggleCheckoutDialog}/>
                 </div>
             }
         <CheckoutDialog toggleCheckoutDialog={toggleCheckoutDialog} ref={checkoutDialogRef} />

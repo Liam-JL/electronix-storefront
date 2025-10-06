@@ -50,7 +50,10 @@
 }
 
 .itemList {
-    flex: 0 1 auto
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 0 1 auto;
 }
 
 .summaryMain {
@@ -98,6 +101,7 @@
     gap: 1rem;
     color: var(--color-accent);
     transition: color ease-in-out 0.2s;
+    align-self: start;
 
     &:hover {
         color: var(--color-accent-light);
@@ -124,7 +128,7 @@
     }
 
     .backLink {
-        justify-content: center;
+        align-self: center;
         margin-top: 1rem;
     }
 
