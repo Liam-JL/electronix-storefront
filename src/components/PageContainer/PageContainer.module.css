@@ -1,9 +1,9 @@
 .pageContainer {
     composes: flexContainer from "../../global-styles/flex.css";
-    flex: 1 0 auto;
     position: relative;
     background: linear-gradient(135deg, #ffffffe5, #e8e9eebb);
-    overflow-y: auto; /* required for scrolling */
+    flex: 1;
+    
 }
 
 .pageBackground {
