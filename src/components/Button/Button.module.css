@@ -18,8 +18,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    /* smooth transitions */
-    transition: all 0.3s ease-in-out;
+    transition: all 180ms ease-in-out;
 
     &:hover {
         opacity: 0.7;
@@ -42,12 +41,8 @@
         color: var(--color-white);
     }
 
-    /* subtle neon shadow pulse animation */
-    box-shadow: 0 0 4px var(--color-accent), 0 0 8px var(--color-accent);
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.6s ease-in-out;
-
+    transition: all 180ms ease-in-out;
     &:hover {
-        /* gentle glowing pulse on hover */
-        box-shadow: 0 0 8px var(--color-accent), 0 0 16px var(--color-accent-light);
+        background-color: var(--color-accent-light);
     }
 }
