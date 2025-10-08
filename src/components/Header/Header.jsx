@@ -73,9 +73,10 @@ export function Nav() {
                 <li>
                     <Link to="/cart" aria-label="Go to Cart" className={styles.navLink}> 
                         <CartIcon className={`${styles.navIcon} ${styles.tiltIcon}`} />
+                        <span className={styles.navLinkLabel}>CART</span>
                         <span
                             ref={badgeRef} 
-                            className={styles.navCartCount} 
+                            className={styles.navCartChip} 
                             aria-live="polite"
                         >
                             {cartCount()}

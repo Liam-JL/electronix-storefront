@@ -1,7 +1,7 @@
 .footer {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
+    justify-content: center;
     gap: 5rem;
     background-color: var(--color-black);
     color: var(--color-white);
@@ -17,6 +17,7 @@
     max-width: 700px;
     justify-items: flex-start;
     gap: 0.5rem;
+    align-items: center;
 
     & p > a {
         text-decoration: underline;
@@ -63,6 +64,8 @@
         flex-direction: column;
         padding: 1rem;
         align-items: center;
+        padding: 1rem;
+        gap: 1rem;
     }
 
     .usefulLinks, .contactLinks {
@@ -79,6 +82,4 @@
     .footer li {
         justify-content: center;
     }
-
-
 }
