@@ -7,7 +7,6 @@ function Error() {
             <h1 className={styles.title}>Error</h1>
             <span>Page not found</span>
             <Link to={'/'}><button className={styles.returnButton}>Return Home</button></Link>
-            <div className={styles.neonBar}></div>
         </div>
     );
 }

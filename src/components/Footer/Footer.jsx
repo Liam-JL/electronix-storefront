@@ -8,17 +8,17 @@ function Footer() {
         <footer className={styles.footer}>
             <section className={styles.about} aria-labelledby='footer-about'>
                 <Logo dark={true} small={true} />
-                <p id='footer-about'>This is not a real store. This is the front-end of a hypothetical E-commerce app built in React for demonstration purposes only. Find the repository on <a href='https://github.com/Liam-JL/electronix-storefront'>GitHub</a></p>
+                <p className={styles.aboutP} id='footer-about'>This is not a real store. This is a demo React e-commerce front-end. Repository on <a href='https://github.com/Liam-JL/electronix-storefront'>GitHub</a></p>
             </section>
 
             <section className={styles.usefulLinks}>
                 <h2>Useful Links</h2>
                 <ul>
                     <li>
-                        <Link to='/error'>Return Policy</Link>
+                        <a href='#' title='Page under construction'>Return Policy</a>
                     </li>
                     <li>
-                        <Link to='/error'>Shipping Information</Link>
+                        <a href='#' title='Page under construction'>Shipping Information</a>
                     </li>
                     <li>
                         <a href='https://logoipsum.com/'>Logoipsum</a>
