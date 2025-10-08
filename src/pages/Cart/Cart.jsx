@@ -50,7 +50,6 @@ export function ItemList() {
     return (
         <section className={styles.itemList}>
             {cartItems.map(item => <CartItemCard key={item.id} item={item}/>)}
-            <Link to='/store' className={styles.backLink}><FaArrowLeft /><span>Continue Shopping</span></Link>
         </section>
     )
 }

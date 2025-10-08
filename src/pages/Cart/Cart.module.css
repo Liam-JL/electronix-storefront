@@ -95,19 +95,6 @@
     border-radius: 8px;
 }
 
-.backLink {
-    composes: flexContainer from '../../global-styles/flex.css';
-    justify-content: flex-start;
-    gap: 1rem;
-    color: var(--color-accent);
-    transition: color ease-in-out 0.2s;
-    align-self: start;
-
-    &:hover {
-        color: var(--color-accent-light);
-    }
-}
-
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .header h1 {
@@ -125,11 +112,6 @@
 
     .itemList {
         justify-content: center;
-    }
-
-    .backLink {
-        align-self: center;
-        margin-top: 1rem;
     }
 
     .sectionMain {
