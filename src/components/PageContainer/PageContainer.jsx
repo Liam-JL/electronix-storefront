@@ -5,7 +5,6 @@ import Store from '../../pages/Store/Store'
 import Cart from '../../pages/Cart/Cart'
 import Error from '../../pages/Error/Error'
 import Product from '../../pages/Product/Product'
-import Checkout from '../../pages/Checkout/Checkout'
 
 
 function PageContainer () {
@@ -19,7 +18,6 @@ function PageContainer () {
                 <Route path='/store' element={<Store />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path="/store/:productId" element={<Product />} />
-                <Route path='/checkout' element={<Checkout />} />
                 <Route path="*" element={<Error />} />
             </Routes>
             <div className={styles.pageBackground}></div>
