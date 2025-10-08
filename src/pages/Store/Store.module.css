@@ -86,9 +86,7 @@
         background-color: var(--color-accent);
         border-color: var(--color-accent-dark);
         color: var(--color-white);
-        box-shadow: 0 0 4px var(--color-accent), 0 0 8px var(--color-accent);
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.6s ease-in-out;
-        box-shadow: 0 0 8px var(--color-accent), 0 0 16px var(--color-accent-light);
+        transition: transform 180ms ease-in-out, opacity 180s ease-in-out;
     }
 }
 
@@ -96,9 +94,6 @@
         background-color: var(--color-accent);
         border-color: var(--color-accent-dark);
         color: var(--color-white);
-        box-shadow: 0 0 4px var(--color-accent), 0 0 8px var(--color-accent);
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.6s ease-in-out;
-        box-shadow: 0 0 8px var(--color-accent), 0 0 16px var(--color-accent-light);
 }
 
 .noProductsMessage {
