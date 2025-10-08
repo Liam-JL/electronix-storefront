@@ -8,7 +8,7 @@ function Footer() {
         <footer className={styles.footer}>
             <section className={styles.about} aria-labelledby='footer-about'>
                 <Logo dark={true} small={true} />
-                <p id='footer-about'>This is not a real store. This is the front-end of a hypothetical E-commerce app built in React for demonstration purposes only. Find the repository on <a href='https://github.com/Liam-JL/electronix-storefront'>GitHub</a></p>
+                <p className={styles.aboutP} id='footer-about'>This is not a real store. This is a demo React e-commerce front-end. Repository on <a href='https://github.com/Liam-JL/electronix-storefront'>GitHub</a></p>
             </section>
 
             <section className={styles.usefulLinks}>
