@@ -26,14 +26,16 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    height: 25px;
 }
 
 .quantitySelect {
     color: var(--color-black);
+    margin: 0;
+    height: 100%;
 }
 
 .removeButton {
-    padding: 0.2rem;
     border: none;
     background: none;
     transition: color ease-in-out 180ms;
