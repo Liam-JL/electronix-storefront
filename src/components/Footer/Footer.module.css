@@ -38,7 +38,7 @@
 .footer a {
     text-decoration: none;
     color: var(--color-light-grey);
-    transition: color 0.2s ease;
+    transition: color 180ms ease;
     
 
     &:hover {
@@ -51,7 +51,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 1rem;
-    transition: color 0.2s ease;
+    transition: color 180ms ease;
     min-width: 200px;
 }
 
