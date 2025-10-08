@@ -11,8 +11,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     flex-shrink: 0;
     
-
-
     & > button {
         display: none;
     }
@@ -50,7 +48,7 @@
         height: 28px;
         width: 28px;
         color: var(--color-black);
-        transition: transform 0.2s ease-in-out;
+        transition: transform 180ms ease-in-out;
     }
 
     & svg:hover {
@@ -84,7 +82,7 @@
 }
 
 .navIcon {
-    transition: all 0.2s ease-in-out;
+    transition: all 180ms ease-in-out;
 }
 
 @keyframes cart-bump {
@@ -98,10 +96,8 @@
 }
 
 .navCartCount.bump {
-    animation: cart-bump 0.3s ease;
+    animation: cart-bump 0.2s ease;
 }
-
-
 
 /* ----------------------------- */
 /* Responsive adjustments */
