@@ -15,10 +15,10 @@ function Footer() {
                 <h2>Useful Links</h2>
                 <ul>
                     <li>
-                        <Link to='/error'>Return Policy</Link>
+                        <a href='#' title='Page under construction'>Return Policy</a>
                     </li>
                     <li>
-                        <Link to='/error'>Shipping Information</Link>
+                        <a href='#' title='Page under construction'>Shipping Information</a>
                     </li>
                     <li>
                         <a href='https://logoipsum.com/'>Logoipsum</a>
