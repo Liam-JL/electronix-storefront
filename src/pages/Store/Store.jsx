@@ -3,6 +3,8 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import styles from './Store.module.css'
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
+import SearchBar from "../../components/SearchBar/SearchBar";
+
 
 function Store() {
     const [activeCategory, setActiveCategory] = useState("all");
@@ -24,6 +26,7 @@ function Store() {
             <header className={styles.header}>
                 <h1>Our Collection</h1>
                 <p>Explore the latest electronics, hand-picked to power your everyday life with style and performance.</p>
+                <div className={styles.searchBarContainer}><SearchBar /></div>
             </header>
             <section className={styles.storeMain}>
                 <FilterBar activeCategory={activeCategory} handleFilterButton={handleFilterButton}/>

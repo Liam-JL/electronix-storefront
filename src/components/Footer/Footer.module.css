@@ -79,7 +79,16 @@
         justify-items: center;
     }
 
+
+    .contactLinks {
+        justify-content: start;
+    }
+
     .footer li {
         justify-content: center;
+    }
+
+    .footer .contactLinks li {
+        justify-content: start;
     }
 }
