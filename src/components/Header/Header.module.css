@@ -16,45 +16,11 @@
     }
 }
 
-.searchBar {
-    composes: flexContainer from "../../global-styles/flex.css";
-    flex: 0 1 400px;
-    gap: 0.5rem;
-    max-width: 400px;
-    width: 100%;
+.searchBarContainer {
+    width: 400px;
     position: absolute;
     left: calc(50% + 2.5rem);
     transform: translate(-50%);
-}
-
-.input {
-    flex: 1;
-    padding: 0.3rem 0.75rem;
-    border: 2px solid var(--color-black);
-    border-radius: 24px;
-    font-size: 1rem;
-}
-
-.inputBtn {
-    composes: flexContainer from "../../global-styles/flex.css";
-    border-radius: 16px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    
-    
-
-    & svg {
-        height: 28px;
-        width: 28px;
-        color: var(--color-black);
-        transition: transform 180ms ease-in-out;
-    }
-
-    & svg:hover {
-        opacity: 0.7;
-        transform: scale(1.2);
-    }
 }
 
 .nav{
@@ -126,7 +92,7 @@
         }
     }
 
-    .header .searchBar {
+    .searchBarContainer {
         display: none;
     }
 

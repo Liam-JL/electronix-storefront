@@ -61,8 +61,8 @@ svg {
   --color-accent: #ff6600;
 
   /* Optional extended palette */
-  --color-accent-light: #ff944d; /* lighter orange */
-  --color-accent-dark: #cc5200;  /* deeper orange */
+  --color-accent-light: #ff771df5; /* lighter orange */
+  --color-accent-dark: #ff6600;  /* deeper orange */
   --color-accent-shadow: rgba(255, 140, 0, 0.5);
   --color-grey: #a5a5ad;         /* mid-grey for borders/secondary text */
 }
